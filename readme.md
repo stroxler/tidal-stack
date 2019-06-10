@@ -27,6 +27,30 @@ Note that the stack.yaml is using nightly-2018-12-01 which is ghc-8.6.2.  To pop
 stack build --resolver=lts-12.20
 ```
 
+installing and starting supercollider (on mac)
+----------------------------------------------
+You can generally `brew cask install supercollider`, or download and
+install the app. You'll find the language interpreter inside the app.
+
+To boot it up, I run
+```
+/Applications/SuperCollider.app/Contents/MacOS/sclang
+  include("SuperDirt")
+  SuperDirt.start
+  s.options.device = "External Headphones"
+```
+
+using atom
+----------
+Run `stack exec atom` to start atom with the right ghc in the environment
+vars. You'll want to install the `tidalcycles` plugin.
+
+Note that if this repo has gotten stale, you may have problems; it's likely
+that the atom plugin is expecting a newer version of tidalcycles. You can
+probably just bump tidalcycles in `stack.yaml` to the latest release;
+alternatively you could pin the plugin version; I had to update this
+repo (which is forked from a December 2018 repo) to get it running
+with the 3.0.0 version of the atom plugin.
 emacs
 ---
 
